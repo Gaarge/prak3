@@ -1,0 +1,19 @@
+name: Self-Hosted Runner Test
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-self-hosted:
+    runs-on: self-hosted
+
+    steps:
+      - name: Show runner info
+        run: |
+          echo "Hello from self-hosted runner!"
+          echo "Runner name: $RUNNER_NAME"
+          echo "OS: $RUNNER_OS"
+          echo "Temp dir: $RUNNER_TEMP"
+          echo "Workspace: $GITHUB_WORKSPACE"
